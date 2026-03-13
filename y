@@ -1,12 +1,13 @@
-
 #!/bin/bash
-
 echo "Starting Deployment..."
 
-# Remove old deployment
+# Make sure the target directory exists
+sudo mkdir -p /var/www/html
+
+# Remove old files
 sudo rm -rf /var/www/html/*
 
-# Copy application files
+# Copy project files to web server
 sudo cp -r * /var/www/html/
 
 echo "Deployment Completed"
